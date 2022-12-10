@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FluentApi"
         mc:Ignorable="d"
-        Title="MainWindow" Height="600" Width="1000">
+        Title="MainWindow" Height="1000" Width="1000">
     <StackPanel>
 
         <StackPanel Height="200" Orientation="Horizontal">
@@ -106,5 +106,7 @@
 
             </StackPanel>
         </StackPanel>
+
+        <Image Name="img" Width="200" Height="200"></Image>
     </StackPanel>
 </Window>
