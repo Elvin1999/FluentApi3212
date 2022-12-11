@@ -73,6 +73,14 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="DataAccess\EFrameworkServer\EFCustomerRepository.cs" />
+    <Compile Include="DataAccess\EFrameworkServer\EFOrderRepository.cs" />
+    <Compile Include="DataAccess\EFrameworkServer\EFUnitOfWork.cs" />
+    <Compile Include="DataAccess\EFrameworkServer\MyContext.cs" />
+    <Compile Include="Domain\Abstractions\ICustomerRepository.cs" />
+    <Compile Include="Domain\Abstractions\IOrderRepository.cs" />
+    <Compile Include="Domain\Abstractions\IRepository.cs" />
+    <Compile Include="Domain\Abstractions\IUnitOfWork.cs" />
     <Compile Include="Domain\Entities\Customer.cs" />
     <Compile Include="Domain\Entities\Mapping\CustomerMap.cs" />
     <Compile Include="Domain\Entities\Mapping\OrderMap.cs" />
@@ -112,8 +120,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Commands\" />
-    <Folder Include="DataAccess\" />
-    <Folder Include="Domain\Abstractions\" />
     <Folder Include="Domain\ViewModels\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
