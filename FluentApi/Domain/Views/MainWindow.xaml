@@ -90,23 +90,23 @@
 
         <StackPanel Width="600">
             <TextBlock FontWeight="DemiBold" FontSize="22" Text="Contact Name"></TextBlock>
-            <TextBox FontSize="22"></TextBox>
+            <TextBox Text="{Binding Customer.ContactName}" FontSize="22"></TextBox>
             <TextBlock FontWeight="DemiBold" FontSize="22" Text="Company Name"></TextBlock>
-            <TextBox FontSize="22"></TextBox>
+            <TextBox Text="{Binding Customer.CompanyName}" FontSize="22"></TextBox>
             <TextBlock FontWeight="DemiBold" FontSize="22" Text="City"></TextBlock>
-            <TextBox FontSize="22"></TextBox>
+            <TextBox Text="{Binding Customer.City}" FontSize="22"></TextBox>
             <TextBlock FontWeight="DemiBold" FontSize="22" Text="Country"></TextBlock>
-            <TextBox FontSize="22"></TextBox>
+            <TextBox Text="{Binding Customer.Country}" FontSize="22"></TextBox>
             <StackPanel Orientation="Horizontal">
-                <Button FontWeight="DemiBold" FontSize="22" Content="Add Customer" Margin="5"></Button>
-                <Button FontWeight="DemiBold" FontSize="22" Content="Update Customer" Margin="5"></Button>
-                <Button FontWeight="DemiBold" FontSize="22" Content="Clear" Margin="5"></Button>
+                <Button Command="{Binding AddCommand}" FontWeight="DemiBold" FontSize="22" Content="Add Customer" Margin="5"></Button>
+                <Button Command="{Binding UpdateCommand}" FontWeight="DemiBold" FontSize="22" Content="Update Customer" Margin="5"></Button>
+                <Button Command="{Binding ResetCommand}" FontWeight="DemiBold" FontSize="22" Content="Clear" Margin="5"></Button>
                 
             </StackPanel>
 
             <StackPanel Orientation="Horizontal">
-                <Button FontWeight="DemiBold" FontSize="22" Content="Delete Customer" Margin="5"></Button>
-                <Button FontWeight="DemiBold" FontSize="22" Content="Order Now Customer" Margin="5"></Button>
+                <Button Command="{Binding DeleteCustomerCommand}" FontWeight="DemiBold" FontSize="22" Content="Delete Customer" Margin="5"></Button>
+                <Button Command="{Binding OrderNowCommand}" FontWeight="DemiBold" FontSize="22" Content="Order Now Customer" Margin="5"></Button>
                 <Button FontWeight="DemiBold" FontSize="22" Content="Delete Order" Margin="5"></Button>
 
             </StackPanel>
