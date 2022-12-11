@@ -2,6 +2,7 @@
 using FluentApi.Domain.Entities;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,27 +13,46 @@ namespace FluentApi.DataAccess.EFrameworkServer
     {
         public void AddData(Order data)
         {
-            throw new NotImplementedException();
+            using (var context=new MyContext())
+            {
+                context.Orders.Add(data);
+                context.SaveChanges();
+            }
         }
 
         public void DeleteData(Order data)
         {
-            throw new NotImplementedException();
+            using (var context = new MyContext())
+            {
+                context.Entry(data).State=EntityState.Deleted;
+                context.SaveChanges();
+            }
         }
 
         public ICollection<Order> GetAll()
         {
-            throw new NotImplementedException();
+            using (var context=new MyContext())
+            {
+                return context.Orders.Include(nameof(Order.Customer)).ToList();
+            }
         }
 
         public Order GetData(int id)
         {
-            throw new NotImplementedException();
+            using (var context = new MyContext())
+            {
+                var data = context.Orders.Include(nameof(Order.Customer)).FirstOrDefault(c => c.Id == id);
+                return data;
+            }
         }
 
         public void UpdateData(Order data)
         {
-            throw new NotImplementedException();
+            using (var context = new MyContext())
+            {
+                context.Entry(data).State = EntityState.Modified;
+                context.SaveChanges();
+            }
         }
     }
 }

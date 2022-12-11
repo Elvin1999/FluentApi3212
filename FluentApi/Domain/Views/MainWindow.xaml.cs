@@ -1,4 +1,5 @@
 ﻿using FluentApi.Domain.Services;
+using FluentApi.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,13 +25,10 @@ namespace FluentApi
         public MainWindow()
         {
             InitializeComponent();
-            Start();
+
+            var vm = new MainViewModel();
+            this.DataContext = vm;
         }
 
-        public async void Start()
-        {
-            var result = await ImageService.GetImagePath("Iphone");
-            img.Source = new BitmapImage(new Uri(result));
-        }
     }
 }

@@ -8,14 +8,16 @@
         Title="MainWindow" Height="1000" Width="1000">
     <StackPanel>
 
-        <StackPanel Height="200" Orientation="Horizontal">
-            <ListView Background="SpringGreen" Width="500" >
+        <StackPanel Height="500" Orientation="Horizontal">
+            <ListView ItemsSource="{Binding AllCustomers}"
+                      SelectedItem="{Binding Customer}"
+                      Background="SpringGreen" Width="500" >
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="ContactName" Width="120" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="" ></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding ContactName}" ></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -23,7 +25,7 @@
                         <GridViewColumn Header="Company" Width="120" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="" ></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding CompanyName}" ></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -31,7 +33,7 @@
                         <GridViewColumn Header="City" Width="120" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="" ></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding City}" ></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -39,7 +41,7 @@
                         <GridViewColumn Header="Country" Width="120" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="" ></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Country}" ></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -49,13 +51,16 @@
                 </ListView.View>
             </ListView>
 
-            <ListView Background="SpringGreen" Width="500" >
+            <ListView
+                ItemsSource="{Binding AllOrders}"
+                SelectedItem="{Binding SelectedOrder}"
+                Background="SpringGreen" Width="500" >
                 <ListView.View>
                     <GridView>
                         <GridViewColumn Header="Customer Company Name" Width="180" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="" ></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding Customer.CompanyName}" ></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -63,7 +68,7 @@
                         <GridViewColumn Header="Order Date" Width="120" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <TextBlock Padding="5,0" Text="" ></TextBlock>
+                                    <TextBlock Padding="5,0" Text="{Binding OrderDate}" ></TextBlock>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
@@ -71,7 +76,7 @@
                         <GridViewColumn Header="Image" Width="120" >
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <Image Width="120" Height="120" ></Image>
+                                    <Image Width="120" Height="120" Source="{Binding ImagePath}" ></Image>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
